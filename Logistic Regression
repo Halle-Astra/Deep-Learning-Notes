@@ -1,0 +1,6 @@
+Is an algorithm for binary classfication(用于二分分类）（是或不是）
+can get a chance（概率） about what you are predicting
+例如线性回归得到的是一个值，但不一定介于0，1之间，所以不适合用于得到一个概率，但logistic不一样，引进sigmoid函数后可以得到一个介于0，1的。
+其实，sigmoid（w'x+b)就相当于对线性回归的表达式进行区间限制。（个人理解）
+b相当于拦截器，即《图解神经网络》中的阈值。
+Loss（error） function:即《图解神经网络》中的误差函数。
