@@ -17,3 +17,20 @@ y' = sigmoid(x), 0<y'<1
 Measures how well you're doing an entire training set:(衡量在全体训练样本上的表现）
 Cost funcion:
 J(w,b) = 1/m*∑L(y'(i),y(i))求均值
+
+算法示例伪代码：
+J = 0;dw1=0;dw2=0;db=0
+For i=1 to m
+  z(i) = w'x(i)+b
+  a(i) = sigma(z(i))
+  J+=-[y(i)ln(a(i))+(1-y(i))ln(1-a(i))]
+  dz(i) = a(i)-y(i)
+  dw1+=x1(i)*dz(i)  //这里dw1没有标号，即作为累加器，便于循环遍历之后平均
+  dw2+=x2(i)*dz(i)
+  db += dz(i)
+J/=m
+dw1/=m;dw2/=m;db/=m.
+
+w1:=w1-alpha*dw1
+w2:=w2-alpha*dw2
+b:=b-alpha*db
