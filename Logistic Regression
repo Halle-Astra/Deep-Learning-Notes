@@ -3,4 +3,17 @@ can get a chance（概率） about what you are predicting
 例如线性回归得到的是一个值，但不一定介于0，1之间，所以不适合用于得到一个概率，但logistic不一样，引进sigmoid函数后可以得到一个介于0，1的。
 其实，sigmoid（w'x+b)就相当于对线性回归的表达式进行区间限制。（个人理解）
 b相当于拦截器，即《图解神经网络》中的阈值。
-Loss（error） function:即《图解神经网络》中的误差函数。
+
+Loss（error） function:即《图解神经网络》中的误差(error)函数。
+可以用残差平方或其0.5作为loss function ，但实践表明这会使之后讨论的优化问题变成非凸的，即多个局部最优解，使得使用梯度下降法时可能找不到全局最优解。
+故构造如下误差函数
+respect to a single training example:（衡量在单个训练样本时的表现）
+Loss(error) function:
+L(y',y)=-(y*ln(y')+(1-y)*ln(1-y'))
+if y=1 :y'->1 , L->0  
+if y=0 :y'->0 , L->0
+y' = sigmoid(x), 0<y'<1
+
+Measures how well you're doing an entire training set:(衡量在全体训练样本上的表现）
+Cost funcion:
+J(w,b) = 1/m*∑L(y'(i),y(i))求均值
