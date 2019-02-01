@@ -34,3 +34,5 @@ dw1/=m;dw2/=m;db/=m.
 w1:=w1-alpha*dw1
 w2:=w2-alpha*dw2
 b:=b-alpha*db
+
+Logistic表示概率的理由莫不是：大值的概率小，小值的概率小，类似正太随机分布?
