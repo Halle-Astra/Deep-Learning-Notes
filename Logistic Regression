@@ -36,3 +36,4 @@ w2:=w2-alpha*dw2
 b:=b-alpha*db
 
 Logistic表示概率的理由莫不是：大值的概率小，小值的概率小，类似正太随机分布?https://www.cnblogs.com/happylion/p/4169945.html
+假设y=1的概率为y',则y=0的概率为1-y'，互斥（独立同分布）
